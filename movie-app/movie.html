@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kimoda Movies</title>
+    <link rel="stylesheet" href="output.css">
+</head>
+<body class="bg-gray-900 text-white">
+    <header class="bg-gray-700 py-4">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <h1 class="text-3xl font-bold">Movies for you</h1>
+            <div class="flex items-center space-x-4">
+                <input type="text" id="searchInput" placeholder="Search here...."
+                class="p-2 border rounded bg-gray-700 text-white ">
+                <button id="searchBtn" class="bg-blue-600 hover:bg-blue-700 text-white px-3 rounded">
+                    Search
+                </button>
+                <button id="homeBtn" class="bg-blue-600 hover:bg-blue-700 text-white px-3 rounded">
+                    Home
+                </button>
+            </div>
+        </div>
+    </header>
+    
+    <section id="moviesGrid" class="grid grid-cols-2 md:grid-cols-4 gap-4">
+
+    </section>
+     <div id="movieModal" class="fixed inset-0 bg-gray-900 bg-opacity-75 hidden flex items-center justify-center">
+        <div class="bg-gray-800 p-6 rounded-lg max-w-2xl w-full">
+            <button id="closeModal" class="text-red-500 float-right">X</button>
+            <h2 id="movieTitle" class="text-2xl font-bold mb-4"></h2>
+            <img id="moviePoster" class="w-full h-64 object-cover mb-4" alt="movie poster">
+            <p id="movieOverview" class="mb-4"></p>
+            <p id="movieRelease" class="mb-4"></p>
+            <p id="movieRating" class="mb-4"></p>
+            <div id="movieTrailer" class="mb-4"></div>
+
+        </div>
+    </div>
+    
+
+     <script src="movie.js"></script>
+    
+</body>
+</html>
