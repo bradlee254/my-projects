@@ -3,29 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kimoda Movies</title>
+    <title> Movies</title>
     <link rel="stylesheet" href="output.css">
+     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
 <body class="bg-gray-900 text-white">
     <header class="bg-gray-700 py-4">
         <div class="container mx-auto px-4 flex justify-between items-center">
-            <h1 class="text-3xl font-bold">Movies for you</h1>
+            <h1 class="text-3xl font-bold">MovieList</h1>
+            <p><button id="homeBtn" class="bg-blue-600 hover:bg-blue-700 text-white px-3 rounded">
+                    Home
+                </button></p>
             <div class="flex items-center space-x-4">
-                <input type="text" id="searchInput" placeholder="Search here...."
+                
+                <input type="text" id="searchInput" placeholder="Search movies...."
                 class="p-2 border rounded bg-gray-700 text-white ">
                 <button id="searchBtn" class="bg-blue-600 hover:bg-blue-700 text-white px-3 rounded">
                     Search
                 </button>
-                <button id="homeBtn" class="bg-blue-600 hover:bg-blue-700 text-white px-3 rounded">
-                    Home
+                <button id="signInBtn" class="bg-blue-600 hover:bg-blue-700 text-white px-3 rounded">
+                    Sign In
                 </button>
             </div>
         </div>
     </header>
-    
+    <div id="genreButtons" class="flex flex-wrap gap-2 mb-4"></div>
     <section id="moviesGrid" class="grid grid-cols-2 md:grid-cols-4 gap-4">
-
+        Latest movies
     </section>
+    <!--  movie Modal -->
      <div id="movieModal" class="fixed inset-0 bg-gray-900 bg-opacity-75 hidden flex items-center justify-center">
         <div class="bg-gray-800 p-6 rounded-lg max-w-2xl w-full">
             <button id="closeModal" class="text-red-500 float-right">X</button>
@@ -38,6 +44,62 @@
 
         </div>
     </div>
+    
+         
+    <!--  Sign Up Modal -->
+
+<div id="signUpModal" class="hidden fixed inset-0 bg-transparent flex items-center justify-center z-50 pointer-events-none">
+  <div class="bg-blue-400 text-black p-6 rounded-lg w-80 pointer-events-auto">
+
+    <form id="signup-form" class="pt-3 space-y-3">
+      <label class="block text-sm font-medium text-gray-700">Username:</label>
+      <input type="text" id="username" class="block w-full p-2 mt-1 text-sm text-gray-700 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500"/>
+
+      <label class="block text-sm font-medium text-gray-700">Email:</label>
+      <input type="email" id="email" class="block w-full p-2 mt-1 text-sm text-gray-700 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500"/>
+
+      <label class="block text-sm font-medium text-gray-700">Password:</label>
+      <input type="password" id="password" class="block w-full p-2 mt-1 text-sm text-gray-700 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500"/>
+
+      <div class="flex justify-end gap-2 pt-4">
+        <button type="button" id="closeSignUp" class="px-3 py-1 bg-gray-400 text-white rounded hover:bg-gray-500">Cancel</button>
+        <button type="submit" id="submitSignUp" class="px-3 py-1 bg-blue-600 text-white rounded hover:bg-blue-700">Submit</button>
+      </div>
+
+      <p class="text-black pt-3">Already have an account? 
+        <button type="button" id="openLoginFromSignup" class="bg-blue-600 hover:bg-blue-700 text-white px-3 rounded">
+          Log In
+        </button>
+      </p>
+    </form>
+  </div>
+</div>
+
+<!--  Log In Modal -->
+<div id="loginModal" class="hidden fixed inset-0 bg-transparent pointer-events-none bg-opacity-50 flex items-center justify-center z-50">
+  <div class="bg-white text-black p-6 rounded-lg w-80">
+    <form id="login-form" class="pt-3 space-y-3">
+      <label class="block text-sm font-medium text-gray-700">Username:</label>
+      <input type="text" id="username-login" class="block w-full p-2 mt-1 text-sm text-gray-700 border border-gray-300 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"/>
+
+      <label class="block text-sm font-medium text-gray-700 mt-3">Password:</label>
+      <input type="password" id="password-login" class="block w-full p-2 mt-1 text-sm text-gray-700 border border-gray-300 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"/>
+
+      <div class="flex justify-end gap-2 pt-4">
+        <button type="button" id="closeLogin" class="px-3 py-1 bg-gray-400 text-white rounded hover:bg-gray-500">Cancel</button>
+        <button type="submit" id="submitLogin" class="px-3 py-1 bg-blue-600 text-white rounded hover:bg-blue-700">Log In</button>
+      </div>
+
+      <p class="text-black pt-3">Don't have an account? 
+        <button type="button" id="openSignupFromLogin" class="bg-blue-600 hover:bg-blue-700 text-white px-3 rounded">
+          Sign Up
+        </button>
+      </p>
+    </form>
+  </div>
+</div>
+
+
     
 
      <script src="script.js"></script>
