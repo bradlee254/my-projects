@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Movies</title>
     <link rel="stylesheet" href="output.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
      <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
 <body class="bg-gray-900 text-white">
@@ -28,13 +29,13 @@
         </div>
     </header>
     <div id="genreButtons" class="flex flex-wrap gap-2 mb-4"></div>
-    <section id="moviesGrid" class="grid grid-cols-2 md:grid-cols-4 gap-4">
-        Latest movies
+    <section id="moviesGrid" class="space-y-6">
+      
     </section>
     <!--  movie Modal -->
      <div id="movieModal" class="fixed inset-0 bg-gray-900 bg-opacity-75 hidden flex items-center justify-center">
         <div class="bg-gray-800 p-6 rounded-lg max-w-2xl w-full">
-            <button id="closeModal" class="text-red-500 float-right">X</button>
+            <button id="closeModal" class="text-red-500 float-right">x</button>
             <h2 id="movieTitle" class="text-2xl font-bold mb-4"></h2>
             <img id="moviePoster" class="w-full h-64 object-cover mb-4" alt="movie poster">
             <p id="movieOverview" class="mb-4"></p>
@@ -48,21 +49,22 @@
          
     <!--  Sign Up Modal -->
 
-<div id="signUpModal" class="hidden fixed inset-0 bg-transparent flex items-center justify-center z-50 pointer-events-none">
-  <div class="bg-blue-400 text-black p-6 rounded-lg w-80 pointer-events-auto">
+<div id="signUpModal" class="hidden fixed inset-0 backdrop-blur-sm bg-black/10 z-50 flex items-center justify-center">
 
+  <div class="bg-white text-black p-6 rounded-lg w-80 pointer-events-auto">
+ <button id="closesignModal" class="text-red-500 float-right">x</button>
     <form id="signup-form" class="pt-3 space-y-3">
       <label class="block text-sm font-medium text-gray-700">Username:</label>
-      <input type="text" id="username" class="block w-full p-2 mt-1 text-sm text-gray-700 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500"/>
+      <input type="text" id="username" class="block w-full p-2 mt-1 text-sm text-gray-700 border border-blue-500 rounded-md focus:ring-indigo-500 focus:border-indigo-500"/>
 
       <label class="block text-sm font-medium text-gray-700">Email:</label>
-      <input type="email" id="email" class="block w-full p-2 mt-1 text-sm text-gray-700 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500"/>
+      <input type="email" id="email" class="block w-full p-2 mt-1 text-sm text-gray-700 border border-blue-500 rounded-md focus:ring-indigo-500 focus:border-indigo-500"/>
 
       <label class="block text-sm font-medium text-gray-700">Password:</label>
-      <input type="password" id="password" class="block w-full p-2 mt-1 text-sm text-gray-700 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500"/>
+      <input type="password" id="password" class="block w-full p-2 mt-1 text-sm text-gray-700 border border-blue-500 rounded-md focus:ring-indigo-500 focus:border-indigo-500"/>
 
       <div class="flex justify-end gap-2 pt-4">
-        <button type="button" id="closeSignUp" class="px-3 py-1 bg-gray-400 text-white rounded hover:bg-gray-500">Cancel</button>
+       
         <button type="submit" id="submitSignUp" class="px-3 py-1 bg-blue-600 text-white rounded hover:bg-blue-700">Submit</button>
       </div>
 
@@ -76,17 +78,18 @@
 </div>
 
 <!--  Log In Modal -->
-<div id="loginModal" class="hidden fixed inset-0 bg-transparent pointer-events-none bg-opacity-50 flex items-center justify-center z-50">
+<div id="loginModal" class="hidden fixed inset-0 backdrop-blur-sm bg-black/10 z-50 flex items-center justify-center">
   <div class="bg-white text-black p-6 rounded-lg w-80">
+     <button id="closelogModal" class="text-red-500 float-right">x</button>
     <form id="login-form" class="pt-3 space-y-3">
       <label class="block text-sm font-medium text-gray-700">Username:</label>
-      <input type="text" id="username-login" class="block w-full p-2 mt-1 text-sm text-gray-700 border border-gray-300 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"/>
+      <input type="text" id="username-login" class="block w-full p-2 mt-1 text-sm text-gray-700 border border-blue-500 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"/>
 
       <label class="block text-sm font-medium text-gray-700 mt-3">Password:</label>
-      <input type="password" id="password-login" class="block w-full p-2 mt-1 text-sm text-gray-700 border border-gray-300 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"/>
+      <input type="password" id="password-login" class="block w-full p-2 mt-1 text-sm text-gray-700 border border-blue-500 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"/>
 
       <div class="flex justify-end gap-2 pt-4">
-        <button type="button" id="closeLogin" class="px-3 py-1 bg-gray-400 text-white rounded hover:bg-gray-500">Cancel</button>
+        
         <button type="submit" id="submitLogin" class="px-3 py-1 bg-blue-600 text-white rounded hover:bg-blue-700">Log In</button>
       </div>
 
@@ -104,5 +107,29 @@
 
      <script src="script.js"></script>
     
+     <footer class="bg-gray-500 text-white mt-10">
+      <div class="max-w-6xl mx-auto px-4 py-10">
+        <div class="flex flex-col md:flex-row justify-between gap-8">
+
+          <div>
+            <h3 class="text-lg font-bold mb-2">Contact Us</h3>
+            <p>Email: support@movielist.com</p>
+            <p>Phone: +254 700 000 000</p>
+            <p class="mt-2 text-sm text-gray-400">&copy 2025 movielist.All reserved</p>
+          </div>
+
+          <div>
+            <h3 class="text-lg font-bold mb-2"> Follow Us</h3>
+            <div class="flex gap-4 text-xi">
+              <a href="#" class="hover:text-blue-500" aria-label="Facebook"><i class="fab fa-facebook"></i> </a>
+               <a href="#" class="hover:text-sky-400" aria-label="Twitter"><i class="fab fa-twitter"></i> </a>
+                <a href="#" class="hover:text-pink-400" aria-label="Instagram"><i class="fab fa-instagram"></i> </a>
+                 <a href="#" class="hover:text-red-400" aria-label="Youtube"><i class="fab fa-youtube"></i> </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+     </footer>
 </body>
 </html>
